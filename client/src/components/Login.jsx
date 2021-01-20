@@ -13,7 +13,7 @@ export default function Login(props) {
       onSubmit={(e) => {
         e.preventDefault();
         axios({
-          url: "http://localhost:5000/users/login",
+          url: "/users/login",
           method: "POST",
           data: formData,
         })

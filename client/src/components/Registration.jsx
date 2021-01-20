@@ -12,7 +12,7 @@ export default function Registration() {
       onSubmit={(e) => {
         e.preventDefault();
         axios({
-          url: "http://localhost:5000/users/add",
+          url: "/users/add",
           method: "POST",
           data: formData,
         })

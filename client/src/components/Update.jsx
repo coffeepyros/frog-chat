@@ -17,7 +17,7 @@ export default function Update(props) {
       onSubmit={(e) => {
         e.preventDefault();
         axios({
-          url: "http://localhost:5000/users/update",
+          url: "/users/update",
           method: "PUT",
           data: formData,
         })

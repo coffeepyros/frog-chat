@@ -14,7 +14,7 @@ export default function Validation() {
       onSubmit={(e) => {
         e.preventDefault();
         axios({
-          url: "http://localhost:5000/users/validate",
+          url: "/users/validate",
           method: "POST",
           data: formData,
         })
@@ -49,7 +49,7 @@ export default function Validation() {
         onClick={(e) => {
           e.preventDefault();
           axios({
-            url: "http://localhost:5000/users/validate2",
+            url: "/users/validate2",
             method: "POST",
             data: formData,
           })
@@ -63,7 +63,7 @@ export default function Validation() {
         onClick={(e) => {
           e.preventDefault();
           axios({
-            url: "http://localhost:5000/users/validate3",
+            url: "/users/validate3",
             method: "POST",
             data: formData,
           })

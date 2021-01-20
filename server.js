@@ -7,7 +7,7 @@ var logger = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-// const loadConfig = dotenv.config();
+const loadConfig = dotenv.config();
 // if (loadConfig.error) {
 //   throw loadConfig.error;
 // }
@@ -18,7 +18,7 @@ const url =
   process.env.DB_USER +
   ":" +
   process.env.DB_PASS +
-  "@cluster0.5xhl1.mongodb.net/projectmanager?retryWrites=true&w=majority";
+  process.env.DB_HOST;
 
 // MONGOOSE DB CONNECTION
 mongoose.connect(url, {

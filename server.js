@@ -1,3 +1,4 @@
+var http = require("http");
 var dotenv = require("dotenv");
 var createError = require("http-errors");
 var express = require("express");
@@ -7,11 +8,11 @@ var logger = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-const loadConfig = dotenv.config();
-// if (loadConfig.error) {
-//   throw loadConfig.error;
-// }
-// console.log(loadConfig.parsed);
+var app = express();
+
+require("dotenv").config();
+
+var server = http.createServer(app);
 
 const url =
   "mongodb+srv://" +
@@ -81,7 +82,8 @@ app.use(function (err, req, res, next) {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
-var port = normalizePort(process.env.PORT || "5000");
+
+var port = process.env.PORT || "5000";
 // app.set("port", port);
 server.listen(port, () => {
   console.log("Listening to port:", port);

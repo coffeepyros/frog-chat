@@ -33,7 +33,7 @@ export default function App() {
           <Route path="/update">
             <Update userInfo={userInfo} />
           </Route>
-          <Route path="/chat">
+          <Route path="/chatbox">
             <Chatbox userFrom="Frog" userTo="Raccoon" />
             <Chatbox userFrom="Raccoon" userTo="Frog" />
           </Route>

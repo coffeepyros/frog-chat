@@ -18,7 +18,7 @@ export default function App() {
           <Link to="/register">Registration</Link>
           <Link to="/login">Login</Link>
           <Link to="/update">Update Profile</Link>
-          <Link to="/chat">Chatbox</Link>
+          <Link to="/chatbox">Chatbox</Link>
         </nav>
       </header>
       <main id="content">

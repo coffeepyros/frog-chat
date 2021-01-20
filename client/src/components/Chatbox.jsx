@@ -9,7 +9,7 @@ export default function Chatbox(props) {
   const [loadDB, setLoadDB] = useState(false);
   if (!loadDB) {
     axios({
-      url: "http://localhost:5000/chatbox/list",
+      url: "http://localhost:5000/chat/list",
       method: "GET",
     })
       .then((res) => setChatHistory(res.data))
@@ -94,7 +94,7 @@ export default function Chatbox(props) {
             };
             setChatHistory([...chatHistory, newMessage]);
             axios({
-              url: "http://localhost:5000/chatbox/add",
+              url: "http://localhost:5000/chat/add",
               method: "POST",
               data: newMessage,
             })

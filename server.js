@@ -42,7 +42,7 @@ app.use(cors());
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-var chatRouter = require("./routes/chatbox");
+var chatRouter = require("./routes/chat");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -57,7 +57,7 @@ app.use(express.static(path.join(__dirname, "client", "build")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/chatbox", chatRouter);
+app.use("/chat", chatRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

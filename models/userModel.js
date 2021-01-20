@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
 // DEFINE DB SCHEMA
-let userSchema = new mongoose.Schema({
+let userSchema = Schema({
   // no need for ID, it is created automatically
   username: String,
   email: String,
   password: String,
 });
 
-let userModel = mongoose.model("User", userSchema); // puts data into collection "users" !!!
-
-module.exports = userModel;
+// puts data into collection "users" !!!
+module.exports = mongoose.model("User", userSchema);

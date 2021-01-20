@@ -40,12 +40,6 @@ router.put("/update", function (req, res, next) {
       }
     })
     .catch((err) => console.log(err));
-
-  // let newUser = new userModel(req.body);
-  // newUser.save((err, result) => {
-  //   if (err) throw err;
-  //   res.send(result);
-  // });
 });
 
 module.exports = router;

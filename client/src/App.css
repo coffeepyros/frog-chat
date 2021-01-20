@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Petrona:wght@400;700&display=swap");
+* {
+  font-family: "Petrona", serif;
+}
+:root {
+  --green-light: hsl(97, 50%, 80%);
+  --green-dark: hsl(98, 67%, 33%);
+}
+body {
+  padding: 1rem;
+  font-size: 18px;
+}
+nav {
+  margin-bottom: 1.33rem;
+}
+nav a:not(:first-of-type) {
+  margin-left: 0.67rem;
+}
+#content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+h1 {
+  grid-column: 1/ 5;
+  font-size: 2rem;
+}
+h1 .icon {
+  position: relative;
+  top: 0.125rem;
+  left: -0.125rem;
+}
+h2 {
+  margin-top: 0;
+  font-size: 1.67rem;
+}
+h2 .icon {
+  position: relative;
+  top: 0.125rem;
+  left: -0.125rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 0.67rem;
+}
+input {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+button {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: var(--green-light);
+}
+.success {
+  color: var(--green-dark);
+}

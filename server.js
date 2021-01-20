@@ -1,12 +1,24 @@
+var dotenv = require("dotenv");
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-const cors = require("cors");
 const mongoose = require("mongoose");
+const cors = require("cors");
+
+const loadConfig = dotenv.config();
+if (loadConfig.error) {
+  throw loadConfig.error;
+}
+console.log(loadConfig.parsed);
+
 const url =
-  "mongodb+srv://admin:vlDWupMk5md8LnhR@cluster0.5xhl1.mongodb.net/projectmanager?retryWrites=true&w=majority";
+  "mongodb+srv://" +
+  process.env.DB_USER +
+  ":" +
+  process.env.DB_PASS +
+  "@cluster0.5xhl1.mongodb.net/projectmanager?retryWrites=true&w=majority";
 
 // MONGOOSE DB CONNECTION
 mongoose.connect(url, {
@@ -22,6 +34,7 @@ db.once("open", () => {
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var chatRouter = require("./routes/chat");
 
 var app = express();
 
@@ -43,6 +56,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/chat", chatRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,0 +1,105 @@
+#chatbox {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 0.67rem;
+}
+#chatbox header {
+  display: flex;
+  justify-content: space-between;
+}
+#chatbox h2 {
+  margin: 0;
+}
+#chatbox .messageContainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    ". timestamp"
+    "avatar message";
+  position: relative;
+  overflow: auto; /* testing */
+}
+#chatbox .messageContainer.fromMe {
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "timestamp ."
+    "message avatar ";
+}
+#chatbox .connected {
+  text-align: right;
+}
+#chatbox .chatUser {
+  color: #888;
+}
+#chatbox .avatar {
+  grid-area: avatar;
+  font-size: 2rem;
+  margin: 0.67rem 1rem 0 0;
+}
+#chatbox .fromMe .avatar {
+  grid-area: avatar;
+  margin: 0.67rem 0 0 1rem;
+}
+#chatbox .timestamp {
+  grid-area: timestamp;
+  margin: 1rem 0 0.25rem 0.67rem;
+  font-size: small;
+  text-transform: uppercase;
+}
+#chatbox .message {
+  grid-area: message;
+  background-color: #fff;
+  margin: 0;
+  padding: 0.67rem;
+  border-radius: 0.67rem;
+}
+/* #chatbox .message::before {
+  content: "";
+  position: absolute;
+  top: 3.75rem;
+  left: 2.25rem;
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #fff;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+} */
+/* #chatbox .fromMe .message::before {
+  display: none;
+}
+#chatbox .fromMe .message::after {
+  content: "";
+  position: absolute;
+  top: 3.75rem;
+  right: 2.25rem;
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #fff;
+  clip-path: polygon(100% 0, 0 0, 0 100%);
+  background-color: var(--green-light);
+} */
+#chatbox .fromMe .message {
+  background-color: var(--green-light);
+}
+#chatbox footer {
+  background-color: #e0e0e0;
+  margin-top: 1rem;
+}
+#chatbox form {
+  background-color: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  padding: 0;
+}
+#chatbox input {
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}

@@ -7,11 +7,11 @@ var logger = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-const loadConfig = dotenv.config();
-if (loadConfig.error) {
-  throw loadConfig.error;
-}
-console.log(loadConfig.parsed);
+// const loadConfig = dotenv.config();
+// if (loadConfig.error) {
+//   throw loadConfig.error;
+// }
+// console.log(loadConfig.parsed);
 
 const url =
   "mongodb+srv://" +
